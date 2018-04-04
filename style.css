@@ -1,0 +1,163 @@
+
+
+body {
+    font-family: 'Martel', serif;
+    color: white;
+    background-image: url(assets/bg.png);
+    height: 100vh;
+    background-size: cover;
+}
+
+
+canvas {
+position: absolute;
+z-index:500;
+opacity:0.5}
+
+@font-face {
+    font-family: 'bellerine';
+    src: url('bellerine_brush-webfont.woff2') format('woff2'),
+    url('bellerine_brush-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+ul {
+    text-decoration: none;
+    list-style-type: none;
+    display: inline-block;
+}
+
+li {
+    float: left;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+li a {
+    color: #FF5100;
+    text-decoration: none;
+}
+
+#top {
+    position: absolute;
+    width: 93vw;
+    z-index: 100;
+    margin-top: 3vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    background-image: url(assets/bonfire.svg);
+    width: 175px;
+    height: 125px;
+
+}
+
+.logos {
+    display: flex;
+    width: 450px;
+    justify-content: space-around;
+
+
+}
+
+.spotify {
+    background-image: url(assets/spotify.svg);
+    width: 119px;
+    height: 36px;
+}
+
+.hsbc {
+    background-image: url(assets/hsbc.svg);
+    width: 142px;
+    height: 25px;
+}
+
+.bwin {
+    background-image: url(assets/bwib.svg);
+    width: 84px;
+    height: 29px;
+}
+
+.hire {
+    font-family: 'bellerine';
+    font-size: 3.5em;
+    color: #FF5100;
+}
+
+
+h4 {
+    font-weight: 200;
+    color: #A8A8BF;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.content {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+
+    height: 90vh;
+    position: absolute;
+    left: 20%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+#display {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    font-family: 'Martel', serif;
+    font-weight: 700;
+    font-size: 3em;
+    color: white;
+    z-index: 100;
+}
+
+.line {
+    margin-top: 50px;
+    width: 60px;
+    height: 1px;
+    background-color: #A8A8C7;
+}
+@keyframes Gradient {
+    from {
+		background-position: 0% 100%;
+    }
+    to {
+		background-position: 0% 0%;
+    }
+
+
+}
+
+#particles-js {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, transparent 70%, #5A2B32 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+	animation-name: Gradient;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    background-size: 100% 110%;
+
+
+}
+
+
+
