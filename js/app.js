@@ -43,7 +43,6 @@
             },
 
             draw: function( ctx ) {
-
                 ctx.beginPath();
                 ctx.arc( this.x, this.y, this.radius, 0, TWO_PI );
                 ctx.fillStyle = this.color;
