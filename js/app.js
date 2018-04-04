@@ -88,14 +88,14 @@
                 pool.push( particles.shift() );
 
             particle = pool.length ? pool.pop() : new Particle();
-            particle.init( x, y, random( 5, 40 ) );
+            particle.init( x, y, random( 9, 40 ) );
 
             particle.wander = random( 1, 5.0 );
             particle.color = random( COLOURS );
-            particle.drag = random( 1 , 1.02 );
+            particle.drag = random( 1 , 1.01 );
 
             theta = random( TWO_PI );
-            force = random( 2, 15 );
+            force = random( 2, 12 );
 
             particle.vx = sin( theta ) * force;
             particle.vy = cos( theta ) * force;
@@ -134,7 +134,7 @@
                 touch = demo.touches[i], max = random( 1, 2 );
                 for ( j = 0; j < max; j++ ) {
                 x = ( demo.width  ) + random( -1900, 1900 );
-                y = ( demo.height  ) + random( 0, 150 );
+                y = ( demo.height  ) + random( 100, 130 );
                 demo.spawn( x, y );
                 }
 
