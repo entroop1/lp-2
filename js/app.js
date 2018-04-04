@@ -39,7 +39,7 @@
                 this.vy += cos( this.theta ) * 0.1;
 
                 this.radius *= 0.96;
-                this.alive = this.radius > 0.5;
+                this.alive = this.radius > 2.5;
             },
 
             draw: function( ctx ) {
@@ -71,7 +71,7 @@
             // Set off some initial particles.
             var i, x, y;
 
-            for ( i = 0; i < 400; i++ ) {
+            for ( i = 0; i < 300; i++ ) {
                 x = ( demo.width  ) + random( -1900, 1900 );
                 y = ( demo.height  ) + random( 0, 150 );
                 demo.spawn( x, y );
@@ -93,7 +93,7 @@
 
             particle.wander = random( 1, 5.0 );
             particle.color = random( COLOURS );
-            particle.drag = random( 1 , 1.04 );
+            particle.drag = random( 1 , 1.02 );
 
             theta = random( TWO_PI );
             force = random( 2, 15 );
