@@ -56,7 +56,7 @@
         // ----------------------------------------
 
         var MAX_PARTICLES = 120;
-        var COLOURS = [ '#FF5100', '#ffffff', '#533744', '#9A5244' ];
+        var COLOURS = [ '#FF5100', '#642D2E', '#533744', '#9A5244' ];
 
         var particles = [];
         var pool = [];
