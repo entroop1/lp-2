@@ -93,7 +93,7 @@
 
             particle.wander = random( 1, 5.0 );
             particle.color = random( COLOURS );
-            particle.drag = random( 1 , 1.07 );
+            particle.drag = random( 1 , 1.04 );
 
             theta = random( TWO_PI );
             force = random( 2, 15 );
