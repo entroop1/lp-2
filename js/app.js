@@ -3,6 +3,8 @@
         // Particle
         // ----------------------------------------
 
+
+
         function Particle( x, y, radius ) {
             this.init( x, y, radius );
         }
@@ -14,9 +16,9 @@
                 this.alive = true;
 
                 this.radius = radius || 10;
-                this.wander = 0.15;
+                this.wander = 5.015;
                 this.theta = random( TWO_PI );
-                this.drag = 0.92;
+                this.drag = 0.001;
                 this.color = '#fff';
 
                 this.x = x || 0.0;
@@ -34,12 +36,12 @@
                 this.vx *= this.drag;
                 this.vy *= this.drag;
 
-                this.theta += random( -15, 15 ) * this.wander;
-                this.vx += sin( this.theta ) * 0.1;
-                this.vy += cos( this.theta ) * 0.1;
+                this.theta += random( 5,5 ) * this.wander;
+                this.vx += sin( this.theta ) * 0.01;
+                this.vy += cos( this.theta ) * 0.01;
 
-                this.radius *= 0.96;
-                this.alive = this.radius > 2.5;
+                this.radius *= .99;
+                this.alive = this.radius > 2;
             },
 
             draw: function( ctx ) {
@@ -47,15 +49,22 @@
                 ctx.arc( this.x, this.y, this.radius, 0, TWO_PI );
                 ctx.fillStyle = this.color;
                 ctx.fill();
+                ctx.shadowBlur=3;
+                ctx.shadowColor= this.color;
+
+
+
             }
+            
+            
         };
 
         // ----------------------------------------
         // Example
         // ----------------------------------------
 
-        var MAX_PARTICLES = 120;
-        var COLOURS = [ '#FF5100', '#642D2E', '#533744', '#9A5244' ];
+        var MAX_PARTICLES = 220;
+        var COLOURS = [ '#5A2B32', '#642D2E', '#533744', '#9A5244' ];
 
         var particles = [];
         var pool = [];
@@ -70,9 +79,9 @@
             // Set off some initial particles.
             var i, x, y;
 
-            for ( i = 0; i < 300; i++ ) {
+            for ( i = 0; i < 200; i++ ) {
                 x = ( demo.width  ) + random( -1900, 1900 );
-                y = ( demo.height  ) + random( 0, 150 );
+                y = ( demo.height  ) + random( 0, 141 );
                 demo.spawn( x, y );
             }
         };
@@ -88,14 +97,14 @@
                 pool.push( particles.shift() );
 
             particle = pool.length ? pool.pop() : new Particle();
-            particle.init( x, y, random( 9, 40 ) );
+            particle.init( x, y, random( 5, 60 ) );
 
-            particle.wander = random( 1, 5.0 );
+            particle.wander = random( 11, 27.0 );
             particle.color = random( COLOURS );
             particle.drag = random( 1 , 1.01 );
 
             theta = random( TWO_PI );
-            force = random( 2, 12 );
+            force = random( -3, 3);
 
             particle.vx = sin( theta ) * force;
             particle.vy = cos( theta ) * force;
@@ -131,10 +140,10 @@
 
             for ( i = 0, n = demo.touches.length; i < n; i++ ) {
 
-                touch = demo.touches[i], max = random( 1, 2 );
+                touch = demo.touches[i], max = random( 1, 4 );
                 for ( j = 0; j < max; j++ ) {
                 x = ( demo.width  ) + random( -1900, 1900 );
-                y = ( demo.height  ) + random( 100, 130 );
+                y = ( demo.height  ) + random( 0, 150 );
                 demo.spawn( x, y );
                 }
 
